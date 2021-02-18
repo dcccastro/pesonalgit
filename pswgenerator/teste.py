@@ -18,13 +18,27 @@ class Window(Frame):
         menuBtn['menu'] = menuBtn.menu
         menuBtn.grid(row=1, column=0)
 
-        menuBtn.menu.add_command(label="Cadastrar", font=7)
-        menuBtn.menu.add_command(label="Pesquisar", font=7)
+        subMenu = Menu(menuBtn, tearoff=0)
+        searchMenu = Menu(menuBtn, tearoff=0)
+        menuBtn.menu.add_cascade(label="Cadastrar", font=7, menu=subMenu)
+        menuBtn.menu.add_cascade(label="Pesquisar", font=7, menu=searchMenu)
+
+        subMenu.add_command(label="Alunos")
+        subMenu.add_command(label="Salas")
+        subMenu.add_command(label="Sala do Café")
+
+        searchMenu.add_command(label="Alunos")
+        searchMenu.add_command(label="Salas")
+        searchMenu.add_command(label="Sala do Café")
+        
+
+    def MakeWindow():
+        pass
 
 
     def Labels(self):
         welcome = Label(self.master, text="Bem vindo ao Meeting Tracker", font=8)
-        welcome.grid(row=0, column=0, padx=50, pady=20)
+        welcome.grid(row=0, column=0, padx=65, pady=20)
 
 
     def UiElements(self):
