@@ -54,7 +54,4 @@ class Window(Frame):
         root.mainloop()
 
 
-start = Window.main()
-
-start()
-
+Window.main()
